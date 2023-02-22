@@ -69,7 +69,7 @@ void ksh_setenv(char **argv);
 void ksh_unsetenv(char **argv);
 void ksh_env(char **argv);
 
-Separator get_first_separator(const char *command);
+Separator get_next_separator(const char *command);
 
 
 
