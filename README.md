@@ -51,45 +51,14 @@ if you run
 > ls -la
 
 Result:
-'''
-$ ls -la
-total 97
-drwxr-xr-x 1 walai_tena walai_tena   512 Feb 23 19:57 .
-drwxr-xr-x 1 walai_tena walai_tena   512 Feb 23 18:04 ..
-drwxr-xr-x 1 walai_tena walai_tena   512 Feb 23 18:09 .git
--rw-r--r-- 1 walai_tena walai_tena   141 Feb 23 18:03 AUTHORS
--rw-r--r-- 1 walai_tena walai_tena   296 Feb 23 18:09 README.md
--rw-r--r-- 1 walai_tena walai_tena   453 Feb 23 18:03 _getenv.c
--rw-r--r-- 1 walai_tena walai_tena   471 Feb 22 15:20 _strtok.c
--rw-r--r-- 1 walai_tena walai_tena   862 Feb 23 18:03 builtins.c
--rw-r--r-- 1 walai_tena walai_tena  1137 Feb 23 18:03 check_command.c
--rw-r--r-- 1 walai_tena walai_tena   754 Feb 23 18:03 check_prog_name.c
--rw-r--r-- 1 walai_tena walai_tena  1997 Feb 23 18:03 error.c
--rw-r--r-- 1 walai_tena walai_tena  2581 Feb 23 18:03 execute_all_commands.c
--rw-r--r-- 1 walai_tena walai_tena  1266 Feb 23 18:03 execute_cmd.c
--rw-r--r-- 1 walai_tena walai_tena   424 Feb 23 18:03 get_command.c
--rw-r--r-- 1 walai_tena walai_tena   402 Feb 23 18:03 get_next_separator.c
--rwxr-xr-x 1 walai_tena walai_tena 28680 Feb 23 19:57 hsh
--rw-r--r-- 1 walai_tena walai_tena   441 Feb 23 18:03 initialize_shell_vars.c
--rw-r--r-- 1 walai_tena walai_tena   805 Feb 23 18:03 ksh_cd.c
--rw-r--r-- 1 walai_tena walai_tena   603 Feb 23 18:03 ksh_env.c
--rw-r--r-- 1 walai_tena walai_tena   484 Feb 23 18:03 ksh_exit.c
--rw-r--r-- 1 walai_tena walai_tena   753 Feb 23 18:03 ksh_setenv_unsetenv.c
--rw-r--r-- 1 walai_tena walai_tena   837 Feb 23 18:03 main.c
--rw-r--r-- 1 walai_tena walai_tena  2440 Feb 23 18:03 main.h
--rw-r--r-- 1 walai_tena walai_tena  1595 Feb 23 18:03 parse_and_exec.c
--rw-r--r-- 1 walai_tena walai_tena   854 Feb 23 18:03 parse_command.c
--rw-r--r-- 1 walai_tena walai_tena   562 Feb 23 18:03 remove_comment.c
--rw-r--r-- 1 walai_tena walai_tena  2622 Feb 23 18:03 search.c
--rw-r--r-- 1 walai_tena walai_tena   180 Feb 23 18:03 signal_handler.c
--rw-r--r-- 1 walai_tena walai_tena   708 Feb 23 18:03 split_commands.c
-'''
+[example](C:\Users\HP\OneDrive\Pictures\Camera Roll\Screenshot 2023-02-23 195947.png)
+
 
 ## Files
 |File|Description|
 |---|---|
 |[AUTHORS](https://github.com/thatboyreegan/simple_shell/blob/main/AUTHORS)|Authors of the project|
-|README.md(https://github.com/thatboyreegan/simple_shell/blob/main/README.md)|Information about the project|
+|[README.md](https://github.com/thatboyreegan/simple_shell/blob/main/README.md)|Information about the project|
 |[_getenv.c](https://github.com/thatboyreegan/simple_shell/blob/main/_getenv.c)|Gets the environment variable|
 |[_strtok.c](https://github.com/thatboyreegan/simple_shell/blob/main/_strtok.c)|Tokenizes the string|
 |[builtins.c](https://github.com/thatboyreegan/simple_shell/blob/main/builtins.c)|Builtin Commands|
