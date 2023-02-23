@@ -22,17 +22,19 @@ void print_environ(char **environ)
 *@var: var_t struct.
 *Return: None.
 */
-void ksh_env(char **argv, var_t *var)
+int ksh_env(char **argv, var_t *var)
 {
 	if (!argv[1])
 	{
-		print_environ(environ);
+		print_environ(var->env);
 	}
 	else
 	{
-		errno = E2BIG;
-		fprintf(stderr, "%s: %s: ", var->shell_name, argv[0]);
-		perror("");
-		return;
+		char **commands = parse_command(argv[1]);
+
+		execute_single_command(commands, var);
+		free(commands);
 	}
+
+	return (0);
 }

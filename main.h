@@ -60,9 +60,10 @@ typedef struct var_s
 typedef struct builtin_s
 {
 	char cmd[10];
-	void (*func)(char **, var_t *);
+	int (*func)(char **, var_t *);
 } builtin_t;
 
+void shell_loop(var_t *var);
 void handle_signal_2(int);
 char *remove_comment(char *cmd);
 char *check_prog_name(char *filename);
@@ -85,18 +86,22 @@ void exit_search_safe(char **paths, char *filepath);
 char *_getenv(const char *name);
 char *_strtok(char *str, const char *delim);
 
-void (*get_builtin_cmd(char **argv))(char **, var_t *);
+int (*get_builtin_cmd(char **argv))(char **, var_t *);
 int execute_builtin(char **argv, var_t *var);
-void ksh_cd(char **argv, var_t *var);
-void ksh_exit(char **argv, var_t *var);
-void ksh_setenv(char **argv, var_t *var);
-void ksh_unsetenv(char **argv, var_t *var);
-void ksh_env(char **argv, var_t *var);
+int ksh_cd(char **argv, var_t *var);
+int ksh_exit(char **argv, var_t *var);
+int ksh_setenv(char **argv, var_t *var);
+int ksh_unsetenv(char **argv, var_t *var);
+int ksh_env(char **argv, var_t *var);
 
 Separator get_next_separator(const char *command);
 
-void error_not_found(char *cmd, var_t *var);
-void error_cd(char **argv, var_t *var, int i);
-char *convert_str(int i);
+int error_not_found(char *cmd, var_t *var);
+int error_cd(char **argv, var_t *var, int i);
+int error_exit(char **argv, var_t *var);
+int error_setenv(char **argv, var_t *var);
+char *convert_to_str(int i);
+int convert_to_int(char *str);
+void rev_str(char *str, int i);
 
 #endif

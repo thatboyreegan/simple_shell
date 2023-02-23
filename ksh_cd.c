@@ -6,7 +6,7 @@
 *@var: var_t struct.
 *Return: None
 */
-void ksh_cd(char **argv, var_t *var)
+int ksh_cd(char **argv, var_t *var)
 {
 	char *dir, *old_dir;
 
@@ -20,30 +20,30 @@ void ksh_cd(char **argv, var_t *var)
 		if (!dir)
 		{
 			fprintf(stderr, "%s: cd: OLDPWD not set\n", var->shell_name);
-			return;
+			return (2);
 		}
 		fprintf(stdout, "%s\n", dir);
 	}
 	else
 	{
 		if (strspn(argv[1], "-") > 2)
-		{
-			error_cd(argv, var, 1);
-			return;
-		}
+			return (error_cd(argv, var, 1));
+
 		dir = argv[1];
 	}
-
 	old_dir = getcwd(NULL, 0);
 	if (setenv("OLDPWD", old_dir, 1) == -1)
 		perror("set");
 
 	if (chdir(dir) == -1)
-		error_cd(argv, var, 0);
-
+	{
+		free(old_dir);
+		return (error_cd(argv, var, 0));
+	}
 	dir = getcwd(NULL, 0);
 	if (setenv("PWD", dir, 1) == -1)
 		perror("set");
 	free(old_dir);
 	free(dir);
+	return (0);
 }
