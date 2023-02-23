@@ -45,14 +45,6 @@ Style guidelines: [Betty style](https://github.com/holbertonschool/Betty/wiki)
 * Type in '_./hsh_' to run the executable.
 
 
-## Example.
-
-if you run 
-> ls -la
-
-Result:
-![example](C:\Users\HP\OneDrive\Pictures\Camera Roll\Screenshot 2023-02-23 195947.png)
-
 
 ## Files
 |File|Description|
