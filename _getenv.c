@@ -20,4 +20,6 @@ char *_getenv(const char *name)
 
 	if (environ[pos])
 		return (environ[pos] + len + 1);
+
+	return (NULL);
 }
