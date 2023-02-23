@@ -59,12 +59,10 @@ int _exec(char *command, var_t *var)
 	case NONE:
 		if (execute_builtin(commands, var) == -1)
 			execute_single_command(commands, var);
-		free(commands);
 		break;
 	case SEMICOLON:
 		if (execute_builtin(commands, var) == -1)
 			execute_single_command(commands, var);
-		free(commands);
 		break;
 	case AND:
 		if (execute_builtin(commands, var) == -1)
@@ -75,7 +73,6 @@ int _exec(char *command, var_t *var)
 				return (-1);
 			}
 		}
-		free(commands);
 		break;
 	case OR:
 		if (execute_builtin(commands, var) == -1)
@@ -86,8 +83,8 @@ int _exec(char *command, var_t *var)
 				return (-1);
 			}
 		}
-		free(commands);
 		break;
 	}
+	free(commands);
 	return (0);
 }

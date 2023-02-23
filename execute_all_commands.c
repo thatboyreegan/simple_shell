@@ -25,27 +25,24 @@ int execute_commands(char *command, var_t *var)
 		commands = parse_command(command);
 		if (execute_NONE(commands, var) == -1)
 			return (-1);
-		free(commands);
 		break;
 	case SEMICOLON:
 		commands = split_commands(command, ";\n\0");
 		if (execute_SEMICOLON(commands, var) == -1)
 			return (-1);
-		free(commands);
 		break;
 	case AND:
 		commands = split_commands(command, "&\n\0");
 		if (execute_AND(commands, var) == -1)
 			return (-1);
-		free(commands);
 		break;
 	case OR:
 		commands = split_commands(command, "|\n\0");
 		if (execute_OR(commands, var) == -1)
 			return (-1);
-		free(commands);
 		break;
 	}
+	free(commands);
 	return (0);
 }
 

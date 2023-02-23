@@ -18,6 +18,7 @@ void shell_loop(var_t *var)
 		if (strcmp(cmd, "\n") == 0 || strspn(cmd, " ") == (strlen(cmd) - 1))
 		{
 			free(cmd);
+			var->cmd_num++;
 			continue;
 		}
 
