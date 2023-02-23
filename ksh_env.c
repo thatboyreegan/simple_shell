@@ -19,9 +19,10 @@ void print_environ(char **environ)
 /**
 *ksh_env - the env builtin command.
 *@argv: arguments to the command.
+*@var: var_t struct.
 *Return: None.
 */
-void ksh_env(char **argv)
+void ksh_env(char **argv, var_t *var)
 {
 	if (!argv[1])
 	{
@@ -30,7 +31,7 @@ void ksh_env(char **argv)
 	else
 	{
 		errno = E2BIG;
-		fprintf(stderr, "%s: %s: ", "ksh", argv[0]);
+		fprintf(stderr, "%s: %s: ", var->shell_name, argv[0]);
 		perror("");
 		return;
 	}

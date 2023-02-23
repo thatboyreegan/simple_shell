@@ -30,7 +30,6 @@ char *check_prog_name(char *filename)
 		}
 		else
 		{
-			perror("prog_name");
 			return (NULL);
 		}
 	}

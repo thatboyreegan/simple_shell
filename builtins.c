@@ -4,7 +4,7 @@
 *@argv: array of arguments.
 *Return: builtin command or NULL if not found.
 */
-void (*get_builtin_cmd(char **argv))(char **)
+void (*get_builtin_cmd(char **argv))(char **, var_t *)
 {
 	int i;
 
@@ -29,16 +29,17 @@ void (*get_builtin_cmd(char **argv))(char **)
 /**
 *execute_builtin - executes builtin commands.
 *@argv: builtin command.
+*@var: var_t struct.
 *Return: 0 if successful or -1 if an error is encounterd
 */
-int execute_builtin(char **argv)
+int execute_builtin(char **argv, var_t *var)
 {
-	void (*func)(char **);
+	void (*func)(char **, var_t *);
 
 	func = get_builtin_cmd(argv);
 	if (func)
 	{
-		func(argv);
+		func(argv, var);
 		return (0);
 	}
 	else

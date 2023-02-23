@@ -3,35 +3,28 @@
 /**
  * get_command - read command entered by user
  *
+ * @var: var_t struct.
+ *
  * Return: string containing the command.
  */
-char *get_command(void)
+char *get_command(var_t *var)
 {
 	char *line = NULL;
 	size_t n = 0;
 
-	while (!line)
+	if (getline(&line, &n, stdin) == -1)
 	{
-		printf("%s", "$ ");
-		if (getline(&line, &n, stdin) == -1)
+		free(line);
+		if (feof(stdin))
 		{
-			free(line);
-			if (feof(stdin))
-			{
-				exit(EXIT_SUCCESS);
-			}
-			else
-			{
-				perror("Error");
-				exit(EXIT_FAILURE);
-			}
+			free(var);
+			exit(EXIT_SUCCESS);
 		}
-
-		if (strcmp(line, "\n") == 0 || strspn(line, " ") == (strlen(line) - 1))
+		else
 		{
-			free(line);
-			line = NULL;
-			n = 0;
+			free(var);
+			perror("Error");
+			exit(EXIT_FAILURE);
 		}
 	}
 	return (line);

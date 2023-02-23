@@ -5,11 +5,11 @@
  * a child process.
  *
  * @argv: Null terminated array containing program name and arguments.
- * @envp: Null terminated array containing environment variables.
+ * @var: var_t struct.
  *
  * Return: 0 on success, -1 on failure.
  */
-int execute_single_command(char **argv, char **envp)
+int execute_single_command(char **argv, var_t *var)
 {
 	char *prog_name;
 
@@ -17,11 +17,11 @@ int execute_single_command(char **argv, char **envp)
 
 	if (prog_name)
 	{
-		return (run_child(prog_name, argv, envp));
+		return (run_child(prog_name, argv, var->env));
 	}
 	else
 	{
-		perror("ksh");
+		error_not_found(argv[0], var);
 		return (-1);
 	}
 

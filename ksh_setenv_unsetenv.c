@@ -2,9 +2,10 @@
 /**
 *ksh_setenv - sets an environment variable.
 *@argv: array of arguments.
+*@var: var_t struct.
 *Return: None.
 */
-void ksh_setenv(char **argv)
+void ksh_setenv(char **argv, var_t *var)
 {
 	if (argv[1] && argv[2] && !argv[3])
 	{
@@ -14,7 +15,7 @@ void ksh_setenv(char **argv)
 	else
 	{
 		errno = E2BIG;
-		fprintf(stderr, "%s: %s: ", "ksh", argv[0]);
+		fprintf(stderr, "%s: %s: ", var->shell_name, argv[0]);
 		perror("");
 		return;
 	}
@@ -23,9 +24,10 @@ void ksh_setenv(char **argv)
 /**
 *ksh_unsetenv - unsets environment variable.
 *@argv: array of arguments.
+*@var: var_t struct.
 *Return: None.
 */
-void ksh_unsetenv(char **argv)
+void ksh_unsetenv(char **argv, var_t *var)
 {
 	if (argv[1 && !argv[2]])
 	{
@@ -35,7 +37,7 @@ void ksh_unsetenv(char **argv)
 	else
 	{
 		errno = E2BIG;
-		fprintf(stderr, "%s: %s: ", "ksh", argv[0]);
+		fprintf(stderr, "%s: %s: ", var->shell_name, argv[0]);
 		perror("");
 		return;
 	}
