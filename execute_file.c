@@ -4,7 +4,8 @@ char *get_command_line(int fd, char *c);
 
 /**
  * execute_file_cmd - execute commands in a file. The file has
- * a single command on each line.
+ * a single command on each line. Every command should be on its
+ * own line and file must have blank line at end.
  *
  * @filename: name of the file.
  * @var: var_t structure.
@@ -32,13 +33,12 @@ int execute_file_cmd(char *filename, var_t *var)
 		{
 			var->cmd_num++;
 			r_bytes = read(fd, &c, sizeof(char));
-			if (c == EOF)
+			if (c == EOF || r_bytes == -1)
 			{
 				close(fd);
 				return (1);
 			}
 		}
-
 		cmd = get_command_line(fd, &c);
 		if (!cmd)
 		{
@@ -46,11 +46,13 @@ int execute_file_cmd(char *filename, var_t *var)
 			close(fd);
 			return (1);
 		}
-
 		len = strlen(cmd);
 		check_and_execute_cmd(cmd, var, len);
-
 		r_bytes = read(fd, &c, sizeof(char));
+		if (r_bytes < 0)
+		{
+			return (0);
+		}
 	}
 	close(fd);
 	return (0);
@@ -74,8 +76,10 @@ char *get_command_line(int fd, char *c)
 	if (!cmd)
 		return (NULL);
 
-	for (pos = 0; *c != '\n'; pos++)
+	for (pos = 0; *c != '\n' && *c != EOF; pos++)
 	{
+		printf("TWO\n");
+		printf("c2: %d\n", *c);
 		if (pos >= bufsize)
 		{
 			bufsize += BUF_SIZE;
