@@ -154,3 +154,35 @@ int error_setenv(char **argv, var_t *var)
 
 	return (2);
 }
+
+/**
+ * error_opening_file - print error message if there's an error opening
+ * a file.
+ *
+ * @filename: name of the file.
+ * @var: var_t structure.
+ *
+ * Return: 127 on success, 1 if memory allocation fails.
+ */
+int error_opening_file(char *filename, var_t *var)
+{
+	char error[200] = {0};
+	char *cmd_num_str = convert_to_str(var->cmd_num);
+
+	if (!cmd_num_str)
+	{
+		perror("Failed to allocate cmd_num_str");
+		return (1);
+	}
+
+	errno = 0;
+	strcat(error, var->shell_name);
+	strcat(error, ": 0: Can't open ");
+	strcat(error, filename);
+	strcat(error, "\n\0");
+
+	write(STDERR_FILENO, error, strlen(error));
+
+	free(cmd_num_str);
+	return (127);
+}

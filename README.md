@@ -1,16 +1,16 @@
 
-# simple_shell
+# simple shell
+
 This is an implementation of a simple UNIX command interpreter written as part of the low-level programming at ALX SWE.
 
 ## Description
 
 This is a simple UNIX sommand language interpreter that reads commands from the standard output or a file and executes the command. This simple shell is based on bash(Bourne Again shell)
 
-
 ### Enviroment
 
 <!-- ubuntu -->
-<a href="https://ubuntu.com/" target="_blank"> <img height="" src="https://img.shields.io/static/v1?label=&message=Ubuntu&color=E95420&logo=Ubuntu&logoColor=E95420&labelColor=2F333A" alt="Suite CRM"></a> OS: Ubuntu 20.04 LTS
+<a href="https://ubuntu.com/" target="_blank"><img height="" src="https://img.shields.io/static/v1?label=&message=Ubuntu&color=E95420&logo=Ubuntu&logoColor=E95420&labelColor=2F333A" alt="Suite CRM"></a> OS: Ubuntu 20.04 LTS
 <!-- bash -->
 <a href="https://www.gnu.org/software/bash/" target="_blank"> <img height="" src="https://img.shields.io/static/v1?label=&message=GNU%20Bash&color=4EAA25&logo=GNU%20Bash&logoColor=4EAA25&labelColor=2F333A" alt="terminal"></a>
 <!-- c -->
@@ -25,7 +25,7 @@ Compiler: gcc 9.3.0
 
 Style guidelines: [Betty style](https://github.com/holbertonschool/Betty/wiki)
 
-## General requirements.
+## General requirements
 
 * Allowed editors: vi, vim, emacs
 * All your files will be compiled on 'Ubuntu 14.04 LTS'
@@ -40,14 +40,13 @@ Style guidelines: [Betty style](https://github.com/holbertonschool/Betty/wiki)
 
 * [Fork](https://docs.github.com/en/get-started/quickstart/fork-a-repo) the [repository](https://github.com/thatboyreegan/simple_shell).
 * [clone](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository) the repository to your local machine.
-* Change into the repository 'cd simple_shell'
+* Change into the repository 'cd simple shell'
 * Compile the program using the command: 'gcc -Wall -Werror -Wextra -pedantic -std=gnu89 *.c -o hsh'
 * Type in '_./hsh_' to run the executable.
 
+## Example
 
-## Example.
-
-if you run 
+if you run
 > ls -la
 
 Result:
@@ -60,7 +59,7 @@ drwxr-xr-x 1 walai_tena walai_tena   512 Feb 23 18:09 .git
 -rw-r--r-- 1 walai_tena walai_tena   141 Feb 23 18:03 AUTHORS
 -rw-r--r-- 1 walai_tena walai_tena   296 Feb 23 18:09 README.md
 -rw-r--r-- 1 walai_tena walai_tena   453 Feb 23 18:03 _getenv.c
--rw-r--r-- 1 walai_tena walai_tena   471 Feb 22 15:20 _strtok.c
+-rw-r--r-- 1 walai_tena walai_tena   471 Feb 22 15:20_strtok.c
 -rw-r--r-- 1 walai_tena walai_tena   862 Feb 23 18:03 builtins.c
 -rw-r--r-- 1 walai_tena walai_tena  1137 Feb 23 18:03 check_command.c
 -rw-r--r-- 1 walai_tena walai_tena   754 Feb 23 18:03 check_prog_name.c
@@ -86,10 +85,11 @@ drwxr-xr-x 1 walai_tena walai_tena   512 Feb 23 18:09 .git
 '''
 
 ## Files
+
 |File|Description|
 |---|---|
 |[AUTHORS](https://github.com/thatboyreegan/simple_shell/blob/main/AUTHORS)|Authors of the project|
-|README.md(https://github.com/thatboyreegan/simple_shell/blob/main/README.md)|Information about the project|
+|README.md(<https://github.com/thatboyreegan/simple_shell/blob/main/README.md>)|Information about the project|
 |[_getenv.c](https://github.com/thatboyreegan/simple_shell/blob/main/_getenv.c)|Gets the environment variable|
 |[_strtok.c](https://github.com/thatboyreegan/simple_shell/blob/main/_strtok.c)|Tokenizes the string|
 |[builtins.c](https://github.com/thatboyreegan/simple_shell/blob/main/builtins.c)|Builtin Commands|
@@ -114,9 +114,8 @@ drwxr-xr-x 1 walai_tena walai_tena   512 Feb 23 18:09 .git
 |[signal_handler.c](https://github.com/thatboyreegan/simple_shell/blob/main/signal_handler.c)|Handles signals|
 |[Split_commands.c](https://github.com/thatboyreegan/simple_shell/blob/main/split_commands.c)|Splits a command to two srings|
 
-
-
 ## Contirubutors
+
 * [Brian Kimathi](https://github.com/bryokim)
 * [Reagan Odhiambo](https://github.com/thatboyreegan)
 
@@ -124,4 +123,4 @@ drwxr-xr-x 1 walai_tena walai_tena   512 Feb 23 18:09 .git
 
 This program emulates some of the basic functionalities of the bash. The man pages were used extensively in the writing of this program.
 
-This program was written as a part of the curriculum for ALX SWE. 
+This program was written as a part of the curriculum for ALX SWE.

@@ -17,7 +17,7 @@ int execute_single_command(char **argv, var_t *var)
 
 	if (prog_name)
 	{
-		return (run_child(prog_name, argv, var->env));
+		return (run_child(prog_name, argv, environ));
 	}
 	else
 	{

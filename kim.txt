@@ -1,0 +1,8 @@
+ls
+ls; ls
+kim
+
+
+
+ls; cd;
+

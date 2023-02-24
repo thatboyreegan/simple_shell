@@ -26,7 +26,7 @@ int ksh_env(char **argv, var_t *var)
 {
 	if (!argv[1])
 	{
-		print_environ(var->env);
+		print_environ(environ);
 	}
 	else
 	{

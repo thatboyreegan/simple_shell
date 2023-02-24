@@ -64,6 +64,9 @@ typedef struct builtin_s
 } builtin_t;
 
 void shell_loop(var_t *var);
+int execute_file_cmd(char *filename, var_t *var);
+void check_and_execute_cmd(char *cmd, var_t *var, size_t len);
+char *command_sub(char *cmd);
 void handle_signal_2(int);
 char *remove_comment(char *cmd);
 char *check_prog_name(char *filename);
@@ -100,6 +103,8 @@ int error_not_found(char *cmd, var_t *var);
 int error_cd(char **argv, var_t *var, int i);
 int error_exit(char **argv, var_t *var);
 int error_setenv(char **argv, var_t *var);
+int error_opening_file(char *filename, var_t *var);
+
 char *convert_to_str(int i);
 int convert_to_int(char *str);
 void rev_str(char *str, int i);
